@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tidyfiles"
+version = "0.1.0"
+description = "Organize a messy folder into tidy subfolders by type or date"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+keywords = ["cli", "files", "organize", "downloads"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/xacking/tidyfiles"
+Issues = "https://github.com/xacking/tidyfiles/issues"
+
+[project.scripts]
+tidyfiles = "tidyfiles.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tidyfiles"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
